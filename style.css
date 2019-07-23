@@ -10,3 +10,19 @@
   text-align: center;
   margin: 20px auto;
 }
+
+/*Notification box*/
+#notification-box {
+	position: fixed;
+	bottom: 1em;
+	left: 1em;
+	z-index: 999999;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  opacity: .6;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  display: none;
+  font-size: .9em;
+}

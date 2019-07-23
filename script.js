@@ -31,6 +31,9 @@ function stop(){
 function reset(){
   document.getElementById('output').innerText = '00 : 00 . 000';
   backup = 0; //Make sure this is zero
+  if(!toggle){
+    notificationBox();
+  }
 }
 
 // Records lapses
@@ -71,4 +74,13 @@ function timeFormatter(time) {
     milliseconds = "0" + milliseconds;
   }
   return minutes + " : " + seconds + " . " + milliseconds;
+}
+
+// Notification box message
+let box = document.getElementById('notification-box')
+function notificationBox(){
+  box.style.display = 'block';
+  setTimeout(function(){ 
+    box.style.display = 'none'; 
+  }, 3000);
 }

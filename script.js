@@ -7,27 +7,24 @@ class theTimer {
     this.toggle = toggle
   }
 
-  oneCount() {
-    this.duration = Date.now() - this.now;
-
-    // Formating
-    let time = new Date(this.duration);
-    console.log(this.now)
-
-    var minutes = time.getMinutes().toString();
-    var seconds = time.getSeconds().toString();
-    var milliseconds = time.getMilliseconds().toString();
-
-    document.getElementById('output').innerText = `${('0'+ minutes).slice(-2)} : ${('0'+seconds).slice(-2)} . ${('0'+milliseconds).slice(-2)}`;
-
-  }
-
   // Starts the time
   start() {
-    console.log(this.duration)
     if (this.toggle) {
       this.now = Date.now() - this.backup;
-      this.r = setInterval(this.oneCount, 10)
+      this.r = setInterval(() => {
+
+        this.duration = Date.now() - this.now;
+
+        // Formating
+        let time = new Date(this.duration);
+
+        var minutes = time.getMinutes().toString();
+        var seconds = time.getSeconds().toString();
+        var milliseconds = time.getMilliseconds().toString();
+
+        document.getElementById('output').innerText = `${('0' + minutes).slice(-2)} : ${('0' + seconds).slice(-2)} . ${('0' + milliseconds).slice(-3)}`;
+
+      }, 10)
       this.toggle = false; //this helps limit the number of setInterval started
     }
   }
@@ -51,14 +48,9 @@ class theTimer {
 
   // Records lapses
   lapses() {
-    lapsesOut(document.getElementById('output').innerText)
-  }
-
-  // Rrender lapses
-  lapsesOut(element) {
     var ul = document.getElementById("lapOutput");
     var li = document.createElement("li");
-    li.appendChild(document.createTextNode(element));
+    li.appendChild(document.createTextNode(document.getElementById('output').innerText));
     ul.appendChild(li);
   }
 
@@ -70,7 +62,6 @@ class theTimer {
 }
 
 let clock = new theTimer(0, 0, 0, true);
-
 
 // Notification box message
 let box = document.getElementById('notification-box')

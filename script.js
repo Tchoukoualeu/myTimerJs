@@ -22,7 +22,7 @@ class theTimer {
         var seconds = time.getSeconds().toString();
         var milliseconds = time.getMilliseconds().toString();
 
-        document.getElementById('output').innerText = `${('0' + minutes).slice(-2)} : ${('0' + seconds).slice(-2)} . ${('0' + milliseconds).slice(-3)}`;
+        document.getElementById('output').innerText = `${('0' + minutes).slice(-2)} : ${('0' + seconds).slice(-2)} . ${('00' + milliseconds).slice(-3)}`;
 
       }, 10)
       this.toggle = false; //this helps limit the number of setInterval started

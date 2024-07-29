@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" >
-    
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>myTimer.js</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="./style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
     <div id="out">
-      <div id="output">00 : 00 . 000</div>
+      <div id="output">
+        <span id="min">00</span> : <span id="sec">00</span> .
+        <span id="tiers" span>000</span>
+      </div>
       <div>
         <button onclick="clock.start()" class="btn btn-success">Start</button>
         <button onclick="clock.stop()" class="btn btn-primary">Stop</button>
         <button onclick="clock.lapses()" class="btn btn-primary">Record</button>
-        <button onclick="clock.reset()" class="btn btn-primary">Reset Clock</button>
-        <button onclick="clock.clean()" class="btn btn-danger">Clear Record</button>
+        <button onclick="clock.reset()" class="btn btn-primary">
+          Reset Clock
+        </button>
+        <button onclick="clock.clean()" class="btn btn-danger">
+          Clear Record
+        </button>
       </div>
       <div>
-        <ol id="lapOutput">
-        </ol>
+        <ol id="lapOutput"></ol>
       </div>
     </div>
-    <div id="notification-box">Please <br/>Stop the Clock first</div>
-    <script  src="./script.js"></script>
+    <div id="notification-box">Please <br />Stop the Clock first</div>
+    <script src="./script.js"></script>
   </body>
-
 </html>

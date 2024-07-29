@@ -41,7 +41,8 @@ class theTimer {
 
   // Resets the time
   reset() {
-    document.getElementById("output").innerText = "00 : 00 . 000"
+    document.getElementById("output").innerHTML =
+      '<div id="output"><span id="min">00</span> : <span id="sec">00</span> . <span id="tiers" span>000</span></div>'
     this.backup = 0 //Make sure this is zero
     if (!this.toggle) {
       notificationBox()
